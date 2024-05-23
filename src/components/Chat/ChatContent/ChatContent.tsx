@@ -59,7 +59,7 @@ const ChatContent = () => {
             className='flex flex-col items-center text-sm dark:bg-gray-800 w-full'
             ref={saveRef}
           >
-            {advancedMode && <ChatTitle />}
+            {<ChatTitle />}
             {!generating && advancedMode && messages?.length === 0 && (
               <NewMessageButton messageIndex={-1} />
             )}
@@ -107,9 +107,6 @@ const ChatContent = () => {
           >
             {useStore.getState().generating || (
               <div className='md:w-[calc(100%-50px)] flex gap-4 flex-wrap justify-center'>
-                <DownloadChat saveRef={saveRef} />
-                <ShareGPT />
-                <CloneChat />
               </div>
             )}
           </div>

@@ -112,11 +112,11 @@ export const getChatCompletionStream = async (
     if (text.includes('model_not_found')) {
       throw new Error(
         text +
-          '\nMessage from Better ChatGPT:\nPlease ensure that you have access to the GPT-4 API!'
+          '\n错误：权限不足'
       );
     } else {
       throw new Error(
-        'Message from Better ChatGPT:\nInvalid API endpoint! We recommend you to check your free API endpoint.'
+        '\n错误：API端点错误'
       );
     }
   }
@@ -126,9 +126,9 @@ export const getChatCompletionStream = async (
     let error = text;
     if (text.includes('insufficient_quota')) {
       error +=
-        '\nMessage from Better ChatGPT:\nWe recommend changing your API endpoint or API key';
+        '\n错误：API配额不足，请稍后再试';
     } else if (response.status === 429) {
-      error += '\nRate limited!';
+      error += '\n错误：请求过于频繁，请稍后再试';
     }
     throw new Error(error);
   }

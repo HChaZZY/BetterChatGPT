@@ -3,7 +3,7 @@ version: '3.4'
 services:
   ui_dev:
     restart: always
-    image: better-chat-gpt
+    image: myai-chat
     build:
       context: ./
     ports:

@@ -24,12 +24,8 @@ const MenuOptions = () => {
         } overflow-hidden transition-all`}
       >
         {countTotalTokens && <TotalTokenCostDisplay />}
-        {googleClientId && <GoogleSync clientId={googleClientId} />}
-        <AboutMenu />
-        <ImportExportChat />
         <Api />
         <SettingsMenu />
-        <Me />
       </div>
     </>
   );

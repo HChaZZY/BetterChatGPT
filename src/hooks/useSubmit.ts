@@ -1,12 +1,13 @@
 import React from 'react';
 import useStore from '@store/store';
 import { useTranslation } from 'react-i18next';
-import { ChatInterface, MessageInterface } from '@type/chat';
 import { getChatCompletion, getChatCompletionStream } from '@api/api';
 import { parseEventSource } from '@api/helper';
 import { limitMessageTokens, updateTotalTokenUsed } from '@utils/messageUtils';
 import { _defaultChatConfig } from '@constants/chat';
 import { officialAPIEndpoint } from '@constants/auth';
+import { ChatInterface, ConfigInterface, MessageInterface } from '@type/chat';
+
 
 const useSubmit = () => {
   const { t, i18n } = useTranslation('api');
@@ -24,6 +25,14 @@ const useSubmit = () => {
   ): Promise<string> => {
     let data;
     try {
+      const chatConfig: ConfigInterface = {
+        model: 'OpenAI-GPT-3.5-Turbo',
+        max_tokens: _defaultChatConfig.max_tokens,
+        temperature: _defaultChatConfig.temperature,
+        top_p: _defaultChatConfig.top_p,
+        frequency_penalty: _defaultChatConfig.frequency_penalty,
+        presence_penalty: _defaultChatConfig.presence_penalty,
+      };
       if (!apiKey || apiKey.length === 0) {
         // official endpoint
         if (apiEndpoint === officialAPIEndpoint) {
@@ -34,14 +43,14 @@ const useSubmit = () => {
         data = await getChatCompletion(
           useStore.getState().apiEndpoint,
           message,
-          _defaultChatConfig
+          chatConfig
         );
       } else if (apiKey) {
         // own apikey
         data = await getChatCompletion(
           useStore.getState().apiEndpoint,
           message,
-          _defaultChatConfig,
+          chatConfig,
           apiKey
         );
       }

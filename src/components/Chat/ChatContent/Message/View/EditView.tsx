@@ -210,22 +210,6 @@ const EditViewButtons = memo(
             </button>
           )}
 
-          <button
-            className={`btn relative mr-2 ${
-              sticky
-                ? `btn-neutral ${
-                    generating ? 'cursor-not-allowed opacity-40' : ''
-                  }`
-                : 'btn-neutral'
-            }`}
-            onClick={handleSave}
-            aria-label={t('save') as string}
-          >
-            <div className='flex items-center justify-center gap-2'>
-              {t('save')}
-            </div>
-          </button>
-
           {sticky || (
             <button
               className='btn relative btn-neutral'

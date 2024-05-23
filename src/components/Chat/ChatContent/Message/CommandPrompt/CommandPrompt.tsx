@@ -40,7 +40,7 @@ const CommandPrompt = ({
   }, [prompts]);
 
   return (
-    <div className='relative max-wd-sm' ref={dropDownRef}>
+    <div className='relative max-wd-sm' ref={dropDownRef} hidden>
       <button
         className='btn btn-neutral btn-small'
         aria-label='prompt library'
