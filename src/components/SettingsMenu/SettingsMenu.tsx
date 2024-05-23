@@ -43,12 +43,11 @@ const SettingsMenu = () => {
           cancelButton={false}
         >
           <div className='p-6 border-b border-gray-200 dark:border-gray-600 flex flex-col items-center gap-4'>
-            <LanguageSelector />
-            <ThemeSwitcher />
             <div className='flex flex-col gap-3'>
               <EnterToSubmitToggle />
               <InlineLatexToggle />
             </div>
+            <ThemeSwitcher />
             <ClearConversation />
           </div>
         </PopupModal>

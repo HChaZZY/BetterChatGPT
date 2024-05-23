@@ -64,6 +64,9 @@ export type ModelOptions =
   | 'gpt-3.5-turbo-0125'
   | 'OpenAI-GPT-3.5-Turbo'
   | 'OpenAI-GPT-4-Turbo'
+  | 'DeepSeek'
+  | 'ChatGLM-4'
+  | 'TongYi-Qwen'
 // | 'gpt-3.5-turbo-0301';
 // | 'gpt-4-0314'
 // | 'gpt-4-32k-0314'
