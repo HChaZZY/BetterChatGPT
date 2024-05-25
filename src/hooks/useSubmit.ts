@@ -26,7 +26,7 @@ const useSubmit = () => {
     let data;
     try {
       const chatConfig: ConfigInterface = {
-        model: 'XunFei-Spark',
+        model: 'XunFei-Spark-Lite',
         max_tokens: _defaultChatConfig.max_tokens,
         temperature: _defaultChatConfig.temperature,
         top_p: _defaultChatConfig.top_p,

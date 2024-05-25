@@ -67,7 +67,7 @@ export type ModelOptions =
   | 'DeepSeek'
   | 'ChatGLM-4'
   | 'TongYi-Qwen'
-  | 'XunFei-Spark'
+  | 'XunFei-Spark-Lite'
 // | 'gpt-3.5-turbo-0301';
 // | 'gpt-4-0314'
 // | 'gpt-4-32k-0314'
