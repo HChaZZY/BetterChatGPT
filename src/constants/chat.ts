@@ -19,7 +19,8 @@ export const modelOptions: ModelOptions[] = [
   'OpenAI-GPT-3.5-Turbo',
   'OpenAI-GPT-4-Turbo',
   'DeepSeek',
-  'ChatGLM-4'
+  'ChatGLM-4',
+  'XunFei-Spark'
 ];
 
 export const defaultModel = 'OpenAI-GPT-4-Turbo';
@@ -48,7 +49,8 @@ export const modelMaxToken = {
   'gpt-4o-2024-05-13': 128000,
   'DeepSeek': 32000,
   'ChatGLM-4': 128000,
-  'TongYi-Qwen': 10000000
+  'TongYi-Qwen': 10000000,
+  'XunFei-Spark': 128000
 };
 
 export const modelCost = {
@@ -145,6 +147,10 @@ export const modelCost = {
     completion: { price: 0.015, unit: 1000 },
   },
   'gpt-4o-2024-05-13': {
+    prompt: { price: 0.005, unit: 1000 },
+    completion: { price: 0.015, unit: 1000 },
+  },
+  'XunFei-Spark': {
     prompt: { price: 0.005, unit: 1000 },
     completion: { price: 0.015, unit: 1000 },
   },
