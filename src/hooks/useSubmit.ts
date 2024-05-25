@@ -26,7 +26,7 @@ const useSubmit = () => {
     let data;
     try {
       const chatConfig: ConfigInterface = {
-        model: 'OpenAI-GPT-3.5-Turbo',
+        model: 'XunFei-Spark',
         max_tokens: _defaultChatConfig.max_tokens,
         temperature: _defaultChatConfig.temperature,
         top_p: _defaultChatConfig.top_p,

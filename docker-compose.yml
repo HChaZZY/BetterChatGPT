@@ -7,4 +7,4 @@ services:
     build:
       context: ./
     ports:
-      - 5173:3000
+      - 4000:3000
